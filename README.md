@@ -12,10 +12,17 @@ The API acts as an interface to an SQLite database which contains information ab
 
 There are 5 endpoints which, together, enable the creation, deletion, and modification of awards, giving and taking awards to content, and searching content and authors. These endpoints are:
 - /assignment-1/Author
+  - GET parameters: author_id / content_id / search (by author name) / page
 - /assignment-1/Award
+  - POST parameters: name (unique award name)
+  - PATCH parameters: award_id + name (unique award name)
+  - DELETE parameters: award_id
 - /assignment-1/Content
+  - GET parameters: content_id / author_id / search (by content name or abstract) / page
 - /assignment-1/Developer
 - /assignment-1/Manager
+  - POST parameters: content_id + award_id
+  - DELETE parameters: content_id
 
 The API also has basic built-in security, multi-parameter support, clean-URL's, and intuitive exception handling with consistent HTTP response codes.
 
