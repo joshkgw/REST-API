@@ -4,8 +4,7 @@ Grade: tbd
 
 The API was built in PHP using Visual Studio Code. The API was ran on a provided web server, using WinSCP to upload the files. All testing was done using Postman.
 
-The API acts as an interface to an SQLite database which contains information about an academic conference, linked here: (linked here: https://programs.sigchi.org/chi/2023)
-The database includes author details and affiliations, content details, awards, and more.
+The API acts as an interface to an SQLite database which contains information about an academic conference, linked here: (linked here: https://programs.sigchi.org/chi/2023). The database includes author details and affiliations, content details, awards, and more.
 
 The API has 5 endpoints which, together, enable the creation, deletion, and modification of awards, giving and taking awards to content, and searching content and authors.
 
