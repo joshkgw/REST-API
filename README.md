@@ -1,20 +1,24 @@
 # Conference Web API
-## Project Background
-A backend web API built for a graded Software Architecture module during my time at Northumbria University.
-
-Grade achieved: tbd
+A backend web API built for a graded Software Architecture module during my time at Northumbria University. I acheived [grade]
 
 ## Project details
-The API was built in PHP using Visual Studio Code. The API was ran on a provided web server, using WinSCP to upload the files. All testing was done using Postman.
+The API was built in PHP using Visual Studio Code, and all testing was done using Postman.
+
+It was ran on a provided web server, using WinSCP to upload the files. As I did not own the web server, I cannot provide a link.
 
 The API acts as an interface to an SQLite database which contains information about an academic conference, linked here: (linked here: https://programs.sigchi.org/chi/2023). The database includes author details and affiliations, content details, awards, and more.
 
-The API has 5 endpoints which, together, enable the creation, deletion, and modification of awards, giving and taking awards to content, and searching content and authors.
+There are 5 endpoints which, together, enable the creation, deletion, and modification of awards, giving and taking awards to content, and searching content and authors. These endpoints are:
+- /assignment-1/Author
+- /assignment-1/Award
+- /assignment-1/Content
+- /assignment-1/Developer
+- /assignment-1/Manager
 
-The API also has multi-parameter support, clean-URL's, and intuitive exception handling with consistent HTTP response codes.
+The API also has basic built-in security, multi-parameter support, clean-URL's, and intuitive exception handling with consistent HTTP response codes.
 
 ## Marking Criteria
-This criteria is taken from the assignment brief.
+This criteria is taken from the assignment brief, and was followed rigorously throughout development.
 
 - Your code must be Object-Oriented.
 - Your code must use a ‘front controller’ pattern and an .htaccess file should be used to enforce a single point of entry. No other design patterns are required but the code must be well structured and organised.
