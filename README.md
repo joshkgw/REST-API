@@ -1,5 +1,7 @@
 # Conference Web API
-A backend web API built for a graded Software Architecture module during my time at Northumbria University. I acheived [grade]
+A backend web API built for a graded Software Architecture module during my time at Northumbria University. 
+
+I acheived [grade]
 
 ## Project details
 The API was built in PHP using Visual Studio Code, and all testing was done using Postman.
