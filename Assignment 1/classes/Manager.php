@@ -20,7 +20,7 @@ class Manager extends Endpoint
      * @throws ClientError if the content_id or award_id does not exist
      */
     protected function post(): void {
-        $db = new Database("db/chi2023.sqlite");
+        $db = new Database($this->env['db']); // Use the database name from env.php
         
         // Accept JSON data
         $request_body = file_get_contents("php://input");
@@ -63,7 +63,7 @@ class Manager extends Endpoint
      * @throws ClientError if the content does not have an award
      */
     protected function delete(): void {
-        $db = new Database("db/chi2023.sqlite");
+        $db = new Database($this->env['db']); // Use the database name from env.php
         
         // Accept JSON data
         $request_body = file_get_contents("php://input");

@@ -10,14 +10,15 @@
  * @author Joshua White
  */
 
-set_exception_handler(function($exception){
-    http_response_code(500);
-    $data = [
-        "message" => $exception->getMessage(),
-        "code" => $exception->getCode(),
-        "file" => $exception->getFile(),
-        "line" => $exception->getLine(),
-    ];
+set_exception_handler(function ($exception) {
+    if ($exception instanceof ClientError) {
+        $errorData = ClientError::handleClientError($exception);
+        $data = ["error" => $errorData["message"]];
+        http_response_code($errorData["code"]);
+    } else {
+        http_response_code(500);
+        $data = ["error" => "Internal Server Error: " . $exception->getMessage()];
+    }
     echo json_encode($data);
     exit();
 });

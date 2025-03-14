@@ -13,14 +13,18 @@
 class Endpoint
 {
     private $data;
+    protected $env;
+
 
     /**
      * Constructor to handle the request method and call the appropriate method.
      * 
+     * @param array $env The environment variables.
      * @throws ClientError If the request method is not allowed.
      */
-    public function __construct()
+    public function __construct($env)
     {
+        $this->env = $env;
         $method = $_SERVER['REQUEST_METHOD'];
         $method_map = [
             "GET" => "get",
@@ -40,6 +44,7 @@ class Endpoint
         }
     }
 
+
     /**
      * Setter method for data.
      * 
@@ -53,6 +58,7 @@ class Endpoint
         $this->data = $data;
     }
 
+
     /**
      * Getter method for data.
      * 
@@ -65,6 +71,7 @@ class Endpoint
         return $this->data;
     }
 
+
     /**
      * Default method for GET requests.
      * 
@@ -75,6 +82,7 @@ class Endpoint
     {
         throw new ClientError("GET method not allowed", 405);
     }
+
 
     /**
      * Default method for POST requests.
@@ -87,6 +95,7 @@ class Endpoint
         throw new ClientError("POST method not allowed", 405);
     }
 
+
     /**
      * Default method for PATCH requests.
      * 
@@ -97,6 +106,7 @@ class Endpoint
     {
         throw new ClientError("PATCH method not allowed", 405);
     }
+
 
     /**
      * Default method for PUT requests.
@@ -109,6 +119,7 @@ class Endpoint
         throw new ClientError("PUT method not allowed", 405);
     }
 
+
     /**
      * Default method for DELETE requests.
      * 
@@ -120,6 +131,7 @@ class Endpoint
         throw new ClientError("DELETE method not allowed", 405);
     }
 
+    
     /**
      * Default method for OPTIONS requests.
      * 

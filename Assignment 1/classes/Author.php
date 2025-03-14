@@ -17,7 +17,7 @@ class Author extends Endpoint
      * @throws ClientError If an invalid parameter is provided.
      */
     protected function get(): void {
-        $db = new Database("db/chi2023.sqlite");
+        $db = new Database($this->env['db']); // Use the database name from env.php
         $sql = "SELECT DISTINCT author.id AS author_id, 
                 author.name
             FROM author

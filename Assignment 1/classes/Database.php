@@ -12,6 +12,7 @@ class Database
 {
     private $dbConnection;
 
+
     /**
      * Constructor to set up the database connection.
      * 
@@ -21,6 +22,7 @@ class Database
     {
         $this->setDbConnection($dbName);  
     }
+
 
     /**
      * Set up the database connection.
@@ -38,6 +40,7 @@ class Database
         }
     }
 
+    
     /**
      * Execute an SQL statement.
      * 

@@ -16,7 +16,7 @@ class Award extends Endpoint
      * @return void
      */
     protected function get(): void {
-        $db = new Database("db/chi2023.sqlite");
+        $db = new Database($this->env['db']); // Use the database name from env.php
         $sql = "SELECT DISTINCT award.id AS award_id,
                 award.name
             FROM award";
@@ -26,6 +26,7 @@ class Award extends Endpoint
         $this->setData($data);
     }
 
+
     /**
      * Handles POST requests to create a new award.
      * 
@@ -33,7 +34,7 @@ class Award extends Endpoint
      * @throws ClientError if no data is provided or if the name is not unique
      */
     protected function post(): void {
-        $db = new Database("db/chi2023.sqlite");
+        $db = new Database($this->env['db']); // Use the database name from env.php
         
         // Accept JSON data
         $request_body = file_get_contents("php://input");
@@ -70,6 +71,7 @@ class Award extends Endpoint
         http_response_code(201); // Created
     }
 
+
     /**
      * Handles PATCH requests to update the name of an existing award.
      * 
@@ -77,7 +79,7 @@ class Award extends Endpoint
      * @throws ClientError if no data is provided, if the award_id or name is missing, or if the name is not unique
      */
     protected function patch(): void {
-        $db = new Database("db/chi2023.sqlite");
+        $db = new Database($this->env['db']); // Use the database name from env.php
         
         // Accept JSON data
         $request_body = file_get_contents("php://input");
@@ -116,6 +118,7 @@ class Award extends Endpoint
         http_response_code(200); // OK
     }
 
+    
     /**
      * Handles DELETE requests to delete an award.
      * 
@@ -123,7 +126,7 @@ class Award extends Endpoint
      * @throws ClientError if no data is provided or if the award_id is missing
      */
     protected function delete(): void {
-        $db = new Database("db/chi2023.sqlite");
+        $db = new Database($this->env['db']); // Use the database name from env.php
         
         // Accept JSON data
         $request_body = file_get_contents("php://input");

@@ -17,7 +17,7 @@ class Content extends Endpoint
      * @throws ClientError if an invalid parameter is provided
      */
     protected function get(): void {
-        $db = new Database("db/chi2023.sqlite");
+        $db = new Database($this->env['db']); // Use the database name from env.php
         $sql = "SELECT DISTINCT content.id AS content_id, 
                 content.title, 
                 content.abstract, 

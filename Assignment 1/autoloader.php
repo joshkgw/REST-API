@@ -10,6 +10,12 @@
  * @author Joshua White
  */
 
+/**
+ * Autoload function to load class files from the "classes" directory.
+ * 
+ * @param string $class The name of the class to load.
+ * @throws Exception If the class file is not found.
+ */
 spl_autoload_register(function ($class) {
     $file = "classes/" . $class . ".php";
     if (file_exists($file)) {
